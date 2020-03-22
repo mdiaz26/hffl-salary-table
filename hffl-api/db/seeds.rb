@@ -42,8 +42,10 @@ csv.each do |row|
     p = Player.new
     p.name = row['Player']
     p.nfl_team = row['Team']
+    p.position = row['Position']
     p.salary = row['Salary']
     p.franchise = string_translation[row['Status']]
+    p.contract = row['Contract']
     p.save
 end
 
