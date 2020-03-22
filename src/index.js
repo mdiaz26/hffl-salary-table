@@ -21,40 +21,45 @@ const renderFranchises = (franchises) => {
 const renderSingleFranchise = franchise => {
     let div = document.createElement("div")
     div.dataset.id = franchise.id
+    div.className = "franchise"
     div.innerHTML = `
-    <h1>${franchise.location} ${franchise.nickname}</h1>
-    <p>${franchise.owners}</p>
-    <ul class="players-container"></ul>
+    <h3>${franchise.location} ${franchise.nickname}</h3>
+    <table class="players-container">
+        <tr>
+            <th>Pos</th>
+            <th>Player</th>
+            <th>Salary</th>
+        </tr>
+    </table>
     `
     teamsDiv.append(div)
-    const ul = div.getElementsByTagName('ul')[0]
-    fetchAndRenderFranchisePlayers(franchise.id, ul)
+    const table = div.getElementsByTagName('table')[0]
+    fetchAndRenderFranchisePlayers(franchise.id, table)
 }
 
-const fetchAndRenderFranchisePlayers = (franchiseId, ul) => {
+const fetchAndRenderFranchisePlayers = (franchiseId, table) => {
     fetch(`http://localhost:3000/api/v1/franchises/${franchiseId}`)
     .then(response => response.json())
     .then(franchise => {
-        renderPlayers(franchise.players, ul)
+        renderPlayers(franchise.players, table)
         calculateTotalSalary(franchise.players)
     })
 }
 
-const renderPlayers = (players, ul) => {
-    players.forEach(player => renderSinglePlayer(player, ul))
-    let total = players.reduce(reducer, 0)
-    ul.prepend(total)
-}
-
-const renderSinglePlayer = (player, ul) => {
-    let li = document.createElement('li')
-    li.dataset.playerId = player.id
-    li.innerHTML = `${player.name} ${player.salary}`
-    ul.append(li)
+const renderPlayers = (players, table) => {
+    players.forEach(playerObj => {
+        let player = new Player(playerObj)
+        player.renderSinglePlayer(table)
+    })
+    let total = calculateTotalSalary(players)
+    table.prepend(total)
 }
 
 const calculateTotalSalary = (players) => {
-    console.log(players.reduce(reducer, 0))
+    return players.reduce(reducer, 0)
 }
 
-const reducer = (accumulator, currentValue) => accumulator + parseInt(currentValue.salary)
+    const reducer = (accumulator, currentValue) => {
+        accumulator + parseInt(currentValue.salary)
+    }
+
