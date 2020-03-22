@@ -17,7 +17,6 @@ class Player {
         <td>${this.futureContractYears(tr)}</td>
         <td>${this.salary}</td>
         `
-        // this.positionTag(tr)
         table.append(tr)
     }
     
@@ -38,29 +37,6 @@ class Player {
         
             default:
                 return this.name
-                break;
-        }
-    }
-
-    positionTag(tr){
-        switch (this.position) {
-            case "QB":
-                tr.dataset.position = "QB"
-                break;
-            case "WR":
-                tr.dataset.position = "WR"
-                break;
-            case "RB":
-                tr.dataset.position = "RB"
-                break;
-            case "TE":
-                tr.dataset.position = "TE"
-                break;
-            case "DEF":
-                tr.dataset.position = "DEF"
-                break;
-            case "K":
-                tr.dataset.position = "K"
                 break;
         }
     }

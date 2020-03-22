@@ -60,6 +60,6 @@ const calculateTotalSalary = (players) => {
 }
 
     const reducer = (accumulator, currentValue) => {
-        accumulator + parseInt(currentValue.salary)
+        return accumulator + parseInt(currentValue.salary)
     }
 
