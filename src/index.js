@@ -48,6 +48,16 @@ const reducer = (accumulator, currentValue) => {
 
 const renderDropDown = () => {
     let selector = document.querySelector("#drop-down")
-    console.log(selector)
+    adapter.getResources()
+    .then(populateDropDown)
+}
 
+const populateDropDown = (franchisesData) => {
+    franchisesData.forEach(franchise => {
+        let selector = document.querySelector("#drop-down")
+        let option = document.createElement('option')
+        option.value = franchise.nickname
+        option.innerText = franchise.nickname
+        selector.append(option)
+    })
 }

@@ -11940,3 +11940,345 @@ Processing by Api::V1::FranchisesController#show as */*
 Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.9ms | Allocations: 4274)
 
 
+Started GET "/api/v1/franchises" for ::1 at 2020-03-23 08:59:27 -0400
+Processing by Api::V1::FranchisesController#index as */*
+  [1m[36mFranchise Load (1.2ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises"[0m
+  ↳ app/controllers/api/v1/franchises_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 1.2ms | Allocations: 1843)
+
+
+Started GET "/api/v1/franchises" for ::1 at 2020-03-23 08:59:27 -0400
+Started GET "/api/v1/franchises/2" for ::1 at 2020-03-23 08:59:27 -0400
+Started GET "/api/v1/franchises/1" for ::1 at 2020-03-23 08:59:27 -0400
+Started GET "/api/v1/franchises/4" for ::1 at 2020-03-23 08:59:27 -0400
+Started GET "/api/v1/franchises/5" for ::1 at 2020-03-23 08:59:27 -0400
+Processing by Api::V1::FranchisesController#index as */*
+  [1m[36mFranchise Load (1.4ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises"[0m
+  ↳ app/controllers/api/v1/franchises_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.4ms | Allocations: 2016)
+
+
+Started GET "/api/v1/franchises/6" for ::1 at 2020-03-23 08:59:27 -0400
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mFranchise Load (0.9ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (1.8ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 6]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 17ms (Views: 6.5ms | ActiveRecord: 5.5ms | Allocations: 4750)
+
+
+Started GET "/api/v1/franchises/7" for ::1 at 2020-03-23 08:59:27 -0400
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mFranchise Load (2.0ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Processing by Api::V1::FranchisesController#show as */*
+Processing by Api::V1::FranchisesController#show as */*
+Processing by Api::V1::FranchisesController#show as */*
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"4"}
+  Parameters: {"id"=>"2"}
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 7]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 15ms (Views: 7.5ms | ActiveRecord: 3.0ms | Allocations: 8521)
+
+
+  [1m[36mFranchise Load (4.8ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mFranchise Load (5.3ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+Processing by Api::V1::FranchisesController#show as */*
+Started GET "/api/v1/franchises/9" for ::1 at 2020-03-23 08:59:27 -0400
+  [1m[36mFranchise Load (16.3ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (9.7ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 4]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 33ms (Views: 10.3ms | ActiveRecord: 15.2ms | Allocations: 11658)
+
+
+  [1m[36mPlayer Load (6.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 43ms (Views: 12.9ms | ActiveRecord: 11.8ms | Allocations: 15850)
+
+
+  [1m[36mPlayer Load (15.7ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 2]]
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"9"}
+Started GET "/api/v1/franchises/10" for ::1 at 2020-03-23 08:59:27 -0400
+Started GET "/api/v1/franchises/8" for ::1 at 2020-03-23 08:59:27 -0400
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 58ms (Views: 16.8ms | ActiveRecord: 33.5ms | Allocations: 20360)
+
+
+  [1m[36mFranchise Load (53.0ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mFranchise Load (67.8ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"10"}
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mFranchise Load (5.9ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (22.4ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 9]]
+  [1m[36mFranchise Load (14.2ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+  [1m[36mPlayer Load (7.8ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 5]]
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 8]]
+Completed 200 OK in 99ms (Views: 20.8ms | ActiveRecord: 75.5ms | Allocations: 11308)
+
+
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 22ms (Views: 8.4ms | ActiveRecord: 7.1ms | Allocations: 9247)
+
+
+Completed 200 OK in 131ms (Views: 38.8ms | ActiveRecord: 77.8ms | Allocations: 27323)
+
+
+  [1m[36mPlayer Load (5.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 10]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 47ms (Views: 22.4ms | ActiveRecord: 19.4ms | Allocations: 16512)
+
+
+Started GET "/api/v1/franchises/3" for ::1 at 2020-03-23 08:59:27 -0400
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFranchise Load (1.4ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 3]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 2.1ms | Allocations: 4272)
+
+
+Started GET "/api/v1/franchises" for ::1 at 2020-03-23 09:00:08 -0400
+Processing by Api::V1::FranchisesController#index as */*
+  [1m[36mFranchise Load (16.5ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises"[0m
+  ↳ app/controllers/api/v1/franchises_controller.rb:5:in `index'
+Completed 200 OK in 19ms (Views: 2.3ms | ActiveRecord: 16.5ms | Allocations: 1785)
+
+
+Started GET "/api/v1/franchises" for ::1 at 2020-03-23 09:00:08 -0400
+Started GET "/api/v1/franchises/1" for ::1 at 2020-03-23 09:00:08 -0400
+Started GET "/api/v1/franchises/2" for ::1 at 2020-03-23 09:00:08 -0400
+Started GET "/api/v1/franchises/3" for ::1 at 2020-03-23 09:00:08 -0400
+Started GET "/api/v1/franchises/4" for ::1 at 2020-03-23 09:00:08 -0400
+Processing by Api::V1::FranchisesController#index as */*
+  [1m[36mFranchise Load (1.5ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises"[0m
+  ↳ app/controllers/api/v1/franchises_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 1.5ms | Allocations: 1782)
+
+
+Started GET "/api/v1/franchises/6" for ::1 at 2020-03-23 09:00:08 -0400
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by Api::V1::FranchisesController#show as */*
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"4"}
+  Parameters: {"id"=>"2"}
+  [1m[36mFranchise Load (29.1ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mFranchise Load (55.2ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (7.8ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 69ms (Views: 4.7ms | ActiveRecord: 63.0ms | Allocations: 7168)
+
+
+Started GET "/api/v1/franchises/7" for ::1 at 2020-03-23 09:00:08 -0400
+  [1m[36mFranchise Load (65.1ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mFranchise Load (74.0ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (44.8ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 2]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+  [1m[36mPlayer Load (90.5ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 4]]
+Completed 200 OK in 126ms (Views: 6.1ms | ActiveRecord: 118.8ms | Allocations: 10990)
+
+
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 134ms (Views: 11.8ms | ActiveRecord: 119.6ms | Allocations: 14607)
+
+
+  [1m[36mFranchise Load (123.0ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"7"}
+Started GET "/api/v1/franchises/8" for ::1 at 2020-03-23 09:00:08 -0400
+Started GET "/api/v1/franchises/9" for ::1 at 2020-03-23 09:00:08 -0400
+  [1m[36mPlayer Load (121.9ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 3]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 194ms (Views: 6.0ms | ActiveRecord: 186.9ms | Allocations: 21392)
+
+
+Started GET "/api/v1/franchises/10" for ::1 at 2020-03-23 09:00:08 -0400
+  [1m[36mPlayer Load (51.5ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 6]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 186ms (Views: 7.9ms | ActiveRecord: 174.5ms | Allocations: 23196)
+
+
+Processing by Api::V1::FranchisesController#show as */*
+  [1m[36mFranchise Load (71.0ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Parameters: {"id"=>"8"}
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"9"}
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mFranchise Load (28.6ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFranchise Load (29.9ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (29.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 7]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 112ms (Views: 7.4ms | ActiveRecord: 100.3ms | Allocations: 15742)
+
+
+  [1m[36mFranchise Load (14.5ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (48.8ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 8]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 88ms (Views: 6.9ms | ActiveRecord: 78.7ms | Allocations: 10010)
+
+
+  [1m[36mPlayer Load (60.4ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 9]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 99ms (Views: 6.1ms | ActiveRecord: 89.0ms | Allocations: 13653)
+
+
+  [1m[36mPlayer Load (68.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 10]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 91ms (Views: 6.3ms | ActiveRecord: 82.9ms | Allocations: 16607)
+
+
+Started GET "/api/v1/franchises/5" for ::1 at 2020-03-23 09:00:08 -0400
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mFranchise Load (1.9ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 5]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 2.6ms | Allocations: 4143)
+
+
+Started GET "/api/v1/franchises" for ::1 at 2020-03-23 09:01:35 -0400
+Processing by Api::V1::FranchisesController#index as */*
+  [1m[36mFranchise Load (1.6ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises"[0m
+  ↳ app/controllers/api/v1/franchises_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.6ms | Allocations: 1782)
+
+
+Started GET "/api/v1/franchises" for ::1 at 2020-03-23 09:01:35 -0400
+Started GET "/api/v1/franchises/3" for ::1 at 2020-03-23 09:01:35 -0400
+Started GET "/api/v1/franchises/2" for ::1 at 2020-03-23 09:01:35 -0400
+Started GET "/api/v1/franchises/1" for ::1 at 2020-03-23 09:01:35 -0400
+Started GET "/api/v1/franchises/4" for ::1 at 2020-03-23 09:01:35 -0400
+Processing by Api::V1::FranchisesController#index as */*
+Processing by Api::V1::FranchisesController#show as */*
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"2"}
+  Parameters: {"id"=>"1"}
+  [1m[36mFranchise Load (1.6ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises"[0m
+Processing by Api::V1::FranchisesController#show as */*
+  ↳ app/controllers/api/v1/franchises_controller.rb:5:in `index'
+  Parameters: {"id"=>"4"}
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.6ms | Allocations: 2997)
+
+
+  [1m[36mFranchise Load (8.6ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mFranchise Load (1.6ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mFranchise Load (8.2ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mFranchise Load (7.8ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (3.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 20ms (Views: 5.6ms | ActiveRecord: 11.2ms | Allocations: 8330)
+
+
+  [1m[36mPlayer Load (11.5ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 4]]
+  [1m[36mPlayer Load (8.6ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 3]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Started GET "/api/v1/franchises/6" for ::1 at 2020-03-23 09:01:35 -0400
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 35ms (Views: 19.8ms | ActiveRecord: 13.1ms | Allocations: 14379)
+
+
+  [1m[36mPlayer Load (7.8ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 2]]
+Started GET "/api/v1/franchises/7" for ::1 at 2020-03-23 09:01:35 -0400
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 47ms (Views: 23.0ms | ActiveRecord: 15.5ms | Allocations: 20449)
+
+
+Completed 200 OK in 34ms (Views: 15.1ms | ActiveRecord: 17.2ms | Allocations: 14035)
+
+
+Started GET "/api/v1/franchises/9" for ::1 at 2020-03-23 09:01:35 -0400
+Started GET "/api/v1/franchises/8" for ::1 at 2020-03-23 09:01:35 -0400
+Started GET "/api/v1/franchises/10" for ::1 at 2020-03-23 09:01:35 -0400
+Processing by Api::V1::FranchisesController#show as */*
+Processing by Api::V1::FranchisesController#show as */*
+Processing by Api::V1::FranchisesController#show as */*
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"10"}
+  Parameters: {"id"=>"7"}
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"9"}
+  Parameters: {"id"=>"6"}
+  Parameters: {"id"=>"8"}
+  [1m[36mFranchise Load (4.3ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mFranchise Load (6.5ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFranchise Load (5.4ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFranchise Load (4.9ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (2.5ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 10]]
+  [1m[36mFranchise Load (5.2ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 6.7ms | Allocations: 7027)
+
+
+  [1m[36mPlayer Load (10.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 6]]
+  [1m[36mPlayer Load (11.7ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 7]]
+  [1m[36mPlayer Load (9.5ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 9]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 28ms (Views: 6.3ms | ActiveRecord: 18.3ms | Allocations: 11544)
+
+
+Completed 200 OK in 33ms (Views: 12.6ms | ActiveRecord: 14.9ms | Allocations: 14994)
+
+
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 55ms (Views: 37.0ms | ActiveRecord: 14.9ms | Allocations: 18161)
+
+
+  [1m[36mPlayer Load (37.7ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 8]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 65ms (Views: 11.2ms | ActiveRecord: 42.9ms | Allocations: 21709)
+
+
+Started GET "/api/v1/franchises/5" for ::1 at 2020-03-23 09:01:36 -0400
+Processing by Api::V1::FranchisesController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mFranchise Load (1.5ms)[0m  [1m[34mSELECT "franchises".* FROM "franchises" WHERE "franchises"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:9:in `show'
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."franchise_id" = $1[0m  [["franchise_id", 5]]
+  ↳ app/controllers/api/v1/franchises_controller.rb:10:in `show'
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 1.9ms | Allocations: 4143)
+
+
