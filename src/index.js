@@ -1,40 +1,23 @@
+const BASE_URL = "http://localhost:3000/api/v1/franchises"
+const adapter = new Adapter(BASE_URL)
+const teamsDiv = document.getElementById("teams-container")
+
 document.addEventListener("DOMContentLoaded", event => {
     console.log("here we go")
-    teamsDiv = document.getElementById("teams-container")
+    adapter.getResources()
+    .then(renderFranchises)
 
-    fetchAndRenderFranchises()
+    renderDropDown()
 })
 
-const fetchAndRenderFranchises = () => {
-    fetch("http://localhost:3000/api/v1/franchises")
-    .then(response => response.json())
-    .then(franchises => renderFranchises(franchises))
+const renderFranchises = (franchisesData) => {
+    franchisesData.forEach(renderFranchise)
 }
 
-const renderFranchises = (franchises) => {
-    franchises.forEach(franchise => {
-        renderSingleFranchise(franchise)
-    })
+const renderFranchise = franchiseObj => {
+    let franchise = new Franchise(franchiseObj)
     
-}
-
-const renderSingleFranchise = franchise => {
-    let div = document.createElement("div")
-    div.dataset.id = franchise.id
-    div.className = "franchise"
-    div.innerHTML = `
-    <h3>${franchise.location} ${franchise.nickname}</h3>
-    <table class="players-container">
-        <tr>
-            <th>Pos</th>
-            <th>Player</th>
-            <th>Salary</th>
-        </tr>
-    </table>
-    `
-    teamsDiv.append(div)
-    const table = div.getElementsByTagName('table')[0]
-    fetchAndRenderFranchisePlayers(franchise.id, table)
+    franchise.render()
 }
 
 const fetchAndRenderFranchisePlayers = (franchiseId, table) => {
@@ -59,7 +42,12 @@ const calculateTotalSalary = (players) => {
     return players.reduce(reducer, 0)
 }
 
-    const reducer = (accumulator, currentValue) => {
-        return accumulator + parseInt(currentValue.salary)
-    }
+const reducer = (accumulator, currentValue) => {
+    return accumulator + parseInt(currentValue.salary)
+}
 
+const renderDropDown = () => {
+    let selector = document.querySelector("#drop-down")
+    console.log(selector)
+
+}
