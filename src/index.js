@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
     addListenerToDropDown()
     addListenerToEditButton()
+    EventHandler.alternateDragListeners()
 })
 
 const pageRender = () => {
@@ -127,10 +128,33 @@ const submitChanges = () => {
 
 const addDragEventListeners = (playerObject, playerElement) => {
     playerElement.addEventListener('dragstart', event => {
-        event.dataTransfer.setData('text', event.target.dataset.player.id)
+        event.dataTransfer.setData('text', event.target.id)
         console.log("start",playerObject)
     }, false)
     playerElement.addEventListener('dragend', event => {
+        event.dataTransfer.clearData()
+        if (document.querySelector('.over')){
+            document.querySelector('.over').classList.remove('over')
+        }
         console.log("end")
     })
 }
+
+// const alternateDragListeners = () => {
+//     teamsDiv.addEventListener('dragstart', event => {
+//         if (event.target.dataset.playerId){
+//             event.dataTransfer.setData('text', event.target.id)
+//             console.log("start")
+//         }
+//         }, false)
+
+//     teamsDiv.addEventListener('dragend', event => {
+//         if (event.target.dataset.playerId){
+//             event.dataTransfer.clearData()
+//             if (document.querySelector('.over')){
+//                 document.querySelector('.over').classList.remove('over')
+//             }
+//             console.log("end")
+//         }
+//     })
+// }

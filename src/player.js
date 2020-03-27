@@ -11,7 +11,7 @@ class Player {
 
     renderSinglePlayer(table){
         let tr = document.createElement('tr')
-        console.log(this)
+        tr.id = `player ${this.id}`
         tr.dataset.playerId = this.id
         tr.dataset.franchiseId = this.franchise
         tr.innerHTML = `
@@ -20,7 +20,7 @@ class Player {
         <td>${this.salary}</td>
         `
         tr.setAttribute('draggable', 'true')
-        addDragEventListeners(this, tr)
+        // addDragEventListeners(this, tr)
         table.append(tr)
     }
     
