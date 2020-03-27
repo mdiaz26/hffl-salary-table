@@ -4,19 +4,23 @@ class Player {
         this.name = playerObj.name
         this.nflTeam = playerObj.nfl_team
         this.salary = playerObj.salary
-        this.franchise = playerObj.franchise
+        this.franchise = playerObj.franchise_id
         this.contract = playerObj.contract
         this.position = playerObj.position
     }
 
     renderSinglePlayer(table){
         let tr = document.createElement('tr')
+        console.log(this)
         tr.dataset.playerId = this.id
+        tr.dataset.franchiseId = this.franchise
         tr.innerHTML = `
         <td class=${this.position}>${this.position}</td>
         <td>${this.futureContractYears(tr)}</td>
         <td>${this.salary}</td>
         `
+        tr.setAttribute('draggable', 'true')
+        addDragEventListeners(this, tr)
         table.append(tr)
     }
     

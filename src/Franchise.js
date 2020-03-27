@@ -24,4 +24,12 @@ class Franchise {
         const table = div.getElementsByTagName('table')[0]
         fetchAndRenderFranchisePlayers(this.id, table)
     }
+
+    addFranchise(){
+        let selector = document.querySelector("#drop-down")
+            let option = document.createElement('option')
+            option.value = this.id
+            option.innerText = this.nickname
+            selector.append(option)
+    }
 }
